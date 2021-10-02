@@ -9,14 +9,13 @@ def menu_principal():
     print("\n--------------- Menu principal de Raxnaquil ---------------\n")
     print("[ 1 ] Ingresar usuario")
     print("[ 2 ] Registrar usuario")
-    print("[ 3 ] Salir")
     print("")
 
     respuesta = input("Opcion: ")
 
     while(True):
 
-        if respuesta == "1" or respuesta == "2" or respuesta == "3":
+        if respuesta == "1" or respuesta == "2":
 
             return respuesta
 
@@ -166,14 +165,13 @@ def menu_loggeo_doctor():
     # Ver que usuarios ha atendido
     # Ver sus calificaciones
     print("[ 1 ] observar reseñas")
-    print("[ 2 ] mirar pacientes")
-    print("[ 3 ] Cerrar mi sesion\n")
+    print("[ 2 ] mirar pacientes\n")
     
     respuesta = input("Opcion: ")
     
     while(True):
         
-        if respuesta in ["1","2","3"]:
+        if respuesta in ["1","2"]:
             
             return respuesta
         

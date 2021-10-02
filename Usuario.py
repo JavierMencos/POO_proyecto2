@@ -42,10 +42,10 @@ class Paciente(Usuario):
 
     def recaudar_datos_paciente(self):
         return self.nombre_usuario + "," + self.clave_ingreso + "," + self.nombre + "," + self.apellido+ "," + self.ubicacion_usuario  + "," + self.edad_paciente  + "," + self.presupuesto_paciente  + "," + self.estatura_paciente  + "," + self.peso_paciente  + "," + self.sintoma_paciente + "\n"
-    
+
 class Calificaciones(Usuario):
     
-    #Clase de reseñas: carnet - reseña
+    # Clase de reseñas: carnet - reseña
     
     def __init__(self, carnet, calificacion):
         

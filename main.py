@@ -40,36 +40,24 @@ def menu_doctor(doctor):
             if doctor_econtrado:
                 calificaciones = "calificaciones.csv"
                 with open(calificaciones, "r") as archivo:
-                    
                     for linea in archivo:
                         linea = linea.rstrip()
                         separador = ","
                         lista = linea.split(",")
-                        
-                        can = lista[0]
-                        
-                        if can == carnet:
-                            cal = lista[1]
-                            
-                            print("\nLa calificacion y comentarios para el Dr." + apellido + "es: " + cal + "\n")
+                        cal = lista[1]
+                        print("\nLa calificacion y comentarios para el Dr." + apellido + "es: " + cal + "\n")
 
                 pass
 
             else:
 
-                print("\n ! El doctor no ha sido encontrado o no tiene reseña, porfavor intenta de nuevo..\n")
+                print("\n ! El doctor no ha sido encontrado, porfavor intenta de nuevo..\n")
             
             pass
 
         elif respuesta == "2":
             # Mirar pacientes atendidos
             pass
-        
-        
-        else:
-
-            # El doctor desloggea:
-            break
     #pass
 
 def menu_paciente(paciente):
@@ -256,14 +244,9 @@ def inicio_programa():
             iniciar_sesion()
 
         # El usuario deicidio registrase:
-        elif respuesta == "2":
+        else:
 
             registrar_usuario()
-            
-        else:
-            
-            #El usuario sale del programa
-            break
 
 
 if __name__ == "__main__":

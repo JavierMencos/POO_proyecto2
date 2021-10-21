@@ -1,13 +1,13 @@
-# Encabezo
+# Encabezado
 import random
 
 def menu_principal():
 
     # Este es el menu principal del proyecto:
 
-    # Raxnaquil
+    # Raxnaquil2
 
-    print("\n--------------- Menu principal de Raxnaquil ---------------\n")
+    print("\n--------------- Menu principal de Raxnaquil 2 ---------------\n")
     print("[ 1 ] Ingresar usuario")
     print("[ 2 ] Registrar usuario")
     print("")
@@ -27,7 +27,7 @@ def menu_principal():
             respuesta = input("Opcion: ")
 
 def pedir_datos_loggeo():
-    print("\n--------------- Menu de loggeo de Raxnaquil ---------------\n")
+    print("\n--------------- Menu de loggeo de Raxnaquil 2---------------\n")
     usuario = input("Usuario: ")
     clave = input("Clave: ")
     return [usuario,clave]
@@ -73,7 +73,7 @@ def elegir_presupuesto_usuario():
 
 def dejar_calificacion():
 
-    print("\n--------------- Menu de calificacion de Raxnaquil ---------------\n")
+    print("\n--------------- Menu de calificacion de Raxnaquil 2---------------\n")
 
     print("Para comenzar, porfavor ingrese el carnet del doctor al que desea calificar:")
 
@@ -192,9 +192,9 @@ def generar_olla_alimenticia_usuario(paciente):
         # print(esta_usuario)
         # print(diccionario_relacion_peso_altura_hombres[float(esta_usuario)])
         # print(peso_usuario)
-        if peso_usuario > diccionario_relacion_peso_altura_hombres[float(esta_usuario)]:
+        if peso_usuario > diccionario_relacion_peso_altura_hombres[float(este_usuario)]:
 
-            # Tiene sobre peso haga ejercicio:
+            # Tiene sobrepeso haga ejercicio:
 
             print("\nSe le recomienda hacer ejercicio para bajar un poco su peso. Visite la siguiente pagina para tener una guia de como hacerlo:")
             print("URL")
@@ -424,7 +424,7 @@ def preguntar_tipo_usuario():
 
     # Este metodo sirve para ubicar que tipo de usuario sera registrado:
 
-    print("\n--------------- Menu de registro de Raxnaquil ---------------\n")
+    print("\n--------------- Menu de registro de Raxnaquil 2---------------\n")
 
     print("[ 1 ] Registrar nuevo doctor")
     print("[ 2 ] Registrar nuevo paciente")

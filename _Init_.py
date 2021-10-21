@@ -1,0 +1,1 @@
+From .Funciones import TablaPeso

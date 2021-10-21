@@ -1,4 +1,5 @@
 # Encabezo
+import random
 
 def menu_principal():
 
@@ -133,6 +134,147 @@ def elegir_especialidad_doctor():
         else:
             print(" ! Opcion no reconocida, porfavor intente de nuevo...")
 
+
+def generar_olla_alimenticia_usuario(paciente):
+
+    print("\n--------------- Menu de olla alimenticia de Raxnaquil ---------------\n")
+
+    lista_generos = ["Hombre","Mujer"]
+
+    genero = ""
+
+    while(True):
+
+        genero = input("Porfavor elija un genero [ Hombre / Mujer ]: ")
+        if genero in lista_generos:
+            break
+        else:
+            print(" ! Genero no reconocido, porfavor intente de nuevo...")
+
+    presupuesto = 0
+
+    while(True):
+
+        try:
+            presupuesto = int(input("Porfavor ingrese su presupuesto: "))
+            if presupuesto < 200:
+                # No puede ser tan bajo:
+                print(" ! El presupuesto tiene que ser un numero mayor a 200Q, porfavor intente de nuevo...")
+                pass
+            else:
+                break
+        except:
+            print(" ! El presupuesto tiene que ser un numero entero, porfavor intente de nuevo...")
+            pass
+
+    # para 300Q 
+    # Carne a la semana 2 veces    1kg carne 70Q
+    # Lacteos 3 veces a la semana   30Q
+    # Carbohidratos y cereales 21 veces   10Q
+    # Frutas y verduras 7 veces   =6Q + 3Q 
+
+    presupuesto_para_carnes = (presupuesto / 8)
+    presupuesto_para_lacteos = (presupuesto / 8)
+    presupuesto_para_cereales = (presupuesto / 8) * 4
+    presupuesto_para_verfruts = (presupuesto / 8) * 2
+
+    peso_usuario = int(paciente.peso_paciente)
+    esta_usuario = paciente.estatura_paciente
+
+    diccionario_relacion_peso_altura_hombres = {1.57:58.1,
+                                                1.58:54.8}
+    diccionario_relacion_peso_altura_mujeres = {1.57:53.7,
+                                                1.58:54.3}
+
+    if genero == "Hombre":
+
+        #Comparar la estatura con el peso: Si es mayo es sobre peso
+        # print(esta_usuario)
+        # print(diccionario_relacion_peso_altura_hombres[float(esta_usuario)])
+        # print(peso_usuario)
+        if peso_usuario > diccionario_relacion_peso_altura_hombres[float(esta_usuario)]:
+
+            # Tiene sobre peso haga ejercicio:
+
+            print("\nSe le recomienda hacer ejercicio para bajar un poco su peso. Visite la siguiente pagina para tener una guia de como hacerlo:")
+            print("URL")
+    
+        else:
+
+            # Si cumple con el peso indicado, ponerle su dieta:
+
+            lista_carnes = [["Res",13],["Pollo",12],["Cerdo",10]] # La suma de dos precios no puede ser mayor a 25
+            lista_lactes = [["Leche",10],["Queso",10],["Yougurt",5]]
+            lista_carboh = [["Arroz",4],["Maiz",4.5],["Frijol",4]] # No se puede pasar de 4.75
+            lista_verfru = [["Banano",3],["Aguacate",4],["Sandia",7]] # No se puede pasar de 7Q
+
+            print("Imprimiendo olla alimenticia de esta semana de acorde a su presupuesto:")
+            print("Listando sus 2 porciones de carnes a la semana:")
+            for i in range(2):
+                carne_electa = lista_carnes[random.randint(0,len(lista_carnes) - 1)]
+                print(str(i + 1) + " " + carne_electa[0] + " Precio: " + str(carne_electa[1]))
+            print("Listando sus 3 porciones de lacteos a la semana:")
+            for i in range(3):
+                lacteo_electo = lista_lactes[random.randint(0,len(lista_lactes)- 1)]
+                print(str(i + 1) + " " + lacteo_electo[0] + " Precio: " + str(lacteo_electo[1]))
+            print("Listando sus 21 porciones de carbohidratos a la semana:")
+            diccionario_carbo = {}
+            for i in range(len(lista_carboh)):
+                diccionario_carbo[lista_carboh[i][0]] = 0
+            for i in range(21):
+                carboh_electo = lista_carboh[random.randint(0,len(lista_carboh)- 1)]
+                diccionario_carbo[carboh_electo[0]] = diccionario_carbo[carboh_electo[0]] + 1
+                # print(str(i + 1) + " " + lacteo_electo[0] + " Precio: " + str(lacteo_electo[1]))
+            print(diccionario_carbo)
+            print("Listando sus 7 porciones de frutas y verduras a la semana:")
+            for i in range(7):
+                frutaver_electa = lista_verfru[random.randint(0,len(lista_verfru)- 1)]
+                print(str(i + 1) + " " + frutaver_electa[0] + " Precio: " + str(frutaver_electa[1]))
+    if genero == "Mujer":
+
+        #Comparar la estatura con el peso: Si es mayo es sobre peso
+        if peso_usuario > diccionario_relacion_peso_altura_mujeres[float(esta_usuario)]:
+
+            # Tiene sobre peso haga ejercicio:
+
+            print("\nSe le recomienda hacer ejercicio para bajar un poco su peso. Visite la siguiente pagina para tener una guia de como hacerlo:")
+            print("URL")
+
+        else:
+            # Si cumple con el peso indicado, ponerle su dieta:
+
+            lista_carnes = [["Res",13],["Pollo",12],["Cerdo",10]] # La suma de dos precios no puede ser mayor a 25
+            lista_lactes = [["Leche",10],["Queso",10],["Yougurt",5]]
+            lista_carboh = [["Arroz",4],["Maiz",4.5],["Frijol",4]] # No se puede pasar de 4.75
+            lista_verfru = [["Banano",3],["Aguacate",4],["Sandia",7]] # No se puede pasar de 7Q
+
+            print("Imprimiendo olla alimenticia de esta semana de acorde a su presupuesto:")
+            print("Listando sus 2 porciones de carnes a la semana:")
+            for i in range(2):
+                carne_electa = lista_carnes[random.randint(0,len(lista_carnes)- 1)]
+                print(str(i + 1) + " " + carne_electa[0] + " Precio: " + str(carne_electa[1]))
+            print("Listando sus 3 porciones de lacteos a la semana:")
+            for i in range(3):
+                lacteo_electo = lista_lactes[random.randint(0,len(lista_lactes)- 1)]
+                print(str(i + 1) + " " + lacteo_electo[0] + " Precio: " + str(lacteo_electo[1]))
+            print("Listando sus 21 porciones de carbohidratos a la semana:")
+            diccionario_carbo = {}
+            for i in range(len(lista_carboh)):
+                diccionario_carbo[lista_carboh[i][0]] = 0
+            for i in range(21):
+                carboh_electo = lista_carboh[random.randint(0,len(lista_carboh)- 1)]
+                diccionario_carbo[carboh_electo[0]] = diccionario_carbo[carboh_electo[0]] + 1
+                # print(str(i + 1) + " " + lacteo_electo[0] + " Precio: " + str(lacteo_electo[1]))
+            print(diccionario_carbo)
+            print("Listando sus 7 porciones de frutas y verduras a la semana:")
+            for i in range(7):
+                frutaver_electa = lista_verfru[random.randint(0,len(lista_verfru)- 1)]
+                print(str(i + 1) + " " + frutaver_electa[0] + " Precio: " + str(frutaver_electa[1]))
+            # Si cumple con el peso indicado, ponerle su dieta:
+
+
+    
+
 def menu_loggeo_paciente():
     print("\n--------------- Menu de paciente de Raxnaquil ---------------\n")
     # Modificar su area de dolor
@@ -144,7 +286,8 @@ def menu_loggeo_paciente():
     print("[ 2 ] Buscar doctor")
     print("[ 3 ] Modificar mi presupuesto")
     print("[ 4 ] Calificar a un doctor")
-    print("[ 5 ] Cerrar mi sesion\n")
+    print("[ 5 ] Generador de olla alimenticia")
+    print("[ 6 ] Cerrar mi sesion\n")
     
     respuesta = input("Opcion: ")
 

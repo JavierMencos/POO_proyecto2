@@ -147,7 +147,6 @@ def menu_paciente(paciente):
             pass
 
         else:
-
             # Se desloggea:
             break
 

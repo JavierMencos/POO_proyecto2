@@ -1,13 +1,13 @@
-# Encabezado
+# Encabezo
 import random
 
 def menu_principal():
 
     # Este es el menu principal del proyecto:
 
-    # Raxnaquil2
+    # Raxnaquil
 
-    print("\n--------------- Menu principal de Raxnaquil 2 ---------------\n")
+    print("\n--------------- Menu principal de Raxnaquil ---------------\n")
     print("[ 1 ] Ingresar usuario")
     print("[ 2 ] Registrar usuario")
     print("")
@@ -27,7 +27,7 @@ def menu_principal():
             respuesta = input("Opcion: ")
 
 def pedir_datos_loggeo():
-    print("\n--------------- Menu de loggeo de Raxnaquil 2---------------\n")
+    print("\n--------------- Menu de loggeo de Raxnaquil ---------------\n")
     usuario = input("Usuario: ")
     clave = input("Clave: ")
     return [usuario,clave]
@@ -56,24 +56,18 @@ def elegir_sintoma_usuario():
 
 def elegir_presupuesto_usuario():
 
-    print("\nPorfavor diganos su presupuesto actual:\n")
-    lista_costos = ["20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55",
-                    "56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91",
-                    "92","93","94","95","96","97","98","99","100"]
-    for i in range(len(lista_costos)):
-        print( "[ " +str(i + 1) + " ] " + lista_costos[i])
-    print("")
-    respuesta = ""
+    presu = int(input("\nPorfavor diganos su presupuesto actual:\n"))
+    
     while(True):
         respuesta = input("Presupuesto: ").capitalize()
-        if respuesta in lista_costos:
+        if (presu > 0):
             return respuesta
         else:
-            print(" ! Opcion no reconocida, actualmemte no hay doctores con precios tan altos o tan bajos, porfavor intente de nuevo...")
+            print(" Opción incorrecta")
 
 def dejar_calificacion():
 
-    print("\n--------------- Menu de calificacion de Raxnaquil 2---------------\n")
+    print("\n--------------- Menu de calificacion de Raxnaquil ---------------\n")
 
     print("Para comenzar, porfavor ingrese el carnet del doctor al que desea calificar:")
 
@@ -192,9 +186,9 @@ def generar_olla_alimenticia_usuario(paciente):
         # print(esta_usuario)
         # print(diccionario_relacion_peso_altura_hombres[float(esta_usuario)])
         # print(peso_usuario)
-        if peso_usuario > diccionario_relacion_peso_altura_hombres[float(este_usuario)]:
+        if peso_usuario > diccionario_relacion_peso_altura_hombres[float(esta_usuario)]:
 
-            # Tiene sobrepeso haga ejercicio:
+            # Tiene sobre peso haga ejercicio:
 
             print("\nSe le recomienda hacer ejercicio para bajar un poco su peso. Visite la siguiente pagina para tener una guia de como hacerlo:")
             print("URL")
@@ -424,7 +418,7 @@ def preguntar_tipo_usuario():
 
     # Este metodo sirve para ubicar que tipo de usuario sera registrado:
 
-    print("\n--------------- Menu de registro de Raxnaquil 2---------------\n")
+    print("\n--------------- Menu de registro de Raxnaquil ---------------\n")
 
     print("[ 1 ] Registrar nuevo doctor")
     print("[ 2 ] Registrar nuevo paciente")

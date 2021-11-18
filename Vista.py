@@ -282,10 +282,11 @@ def generar_olla_alimenticia_usuario(paciente):
 
             # Si cumple con el peso indicado, ponerle su dieta:
 
-            lista_carnes = [["Res",13],["Pollo",12],["Cerdo",10]] # La suma de dos precios no puede ser mayor a 25
-            lista_lactes = [["Leche",10],["Queso",10],["Yougurt",5]]
-            lista_carboh = [["Arroz",4],["Maiz",4.5],["Frijol",4]] # No se puede pasar de 4.75
-            lista_verfru = [["Banano",3],["Aguacate",4],["Sandia",7]] # No se puede pasar de 7Q
+            lista_carnes = [["Res",13],["Pollo",12],["Cerdo",10],["Tilapia",15],["Alevin",1.5],["Higaado de res",12],["Sardina",7],["pavo libra",19]] # La suma de dos precios no puede ser mayor a 25
+            lista_lactes = [["Leche",10],["Queso",10],["Yougurt",5],["Queso seco",10],["Crema",10],["Requeson",11],["queso crema",12],["queso manchego",16]]
+            lista_carboh = [["Arroz",4],["Maiz",4.5],["Frijol",4]["Avena",4]] # No se puede pasar de 4.75
+            lista_verfru = [["Banano",3],["Aguacate",4],["Sandia",7],["zanahoria",3],["acelga",2.5],["remolacha",3.25],["pepino",3.30],["escarola",4],["guisquil",4],
+                            ["cebollin",4], ["brócoli",5], ["tomate",5], ["lechuga",5.5]] # No se puede pasar de 7Q
 
             print("Imprimiendo olla alimenticia de esta semana de acorde a su presupuesto:")
             print("Listando sus 2 porciones de carnes a la semana:")

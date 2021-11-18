@@ -119,7 +119,7 @@ def ingresar_usuario():
             relacionesdoctor = "relacionesdoctor.csv"
             paciente = ""
             with open(relacionesdoctor, "r") as archivo:
-                for lines in archivo:
+                for linea in archivo:
                     linea = linea.rstrip()
                     separador = ","
                     lista = linea.split(",")

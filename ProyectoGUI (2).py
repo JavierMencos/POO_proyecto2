@@ -116,17 +116,7 @@ def ingresar_usuario():
             pass
         
         def observar_pacientes():
-            relacionesdoctor = "relacionesdoctor.csv"
-            paciente = ""
-            with open(relacionesdoctor, "r") as archivo:
-                for lines in archivo:
-                    linea = linea.rstrip()
-                    separador = ","
-                    lista = linea.split(",")
-                    cal = lista[1]
-                    paciente = paciente + "\n" + cal
-                    # print("\nLos pacientes que atendio el Dr. son: "+ cal + "\n")
-            caja_texto.insert(tk.INSERT, paciente)
+            
             pass
         
         texto_menu_doctor = tk.Label(v_md, text="Menu de Doctor de Raxnaquil")
@@ -742,4 +732,3 @@ boton_salir_menu.pack(pady=30)
 root.mainloop()
 
 
-    
